@@ -9,8 +9,8 @@ ALL_SYMBOLS = {}
 RE_PATH = re.compile(r'<path d="(.*?)"')
 files = sorted(listdir(SF_SYMBOLS_PATH))
 files_length = len(files)
-i = 0
 
+i = 0
 for symbol_file in files:
     i += 1
     symbol_name = symbol_file.rstrip('.svg')
@@ -26,3 +26,12 @@ with open('sf-symbols.json', 'w') as file:
 
 with open('sf-symbols.min.json', 'w') as file:
     json.dump(ALL_SYMBOLS, file)
+
+with open('sf-symbols.raw.js', 'r') as raw, \
+    open('sf-symbols.js', 'w') as res:
+    res.write(
+        raw.read().replace(
+            "require('./sf-symbols.min.json')",
+            json.dumps(ALL_SYMBOLS)
+        )
+    )

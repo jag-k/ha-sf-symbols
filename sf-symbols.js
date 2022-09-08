@@ -1,4 +1,4 @@
-const SF_SYMBOLS_MAP = require('./res.min.json')
+const SF_SYMBOLS_MAP = require('./sf-symbols.min.json')
 
 async function getIcon(name) {
   return { path: SF_SYMBOLS_MAP[name.replace(/_/g,'-')] };
