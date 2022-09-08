@@ -6,7 +6,7 @@ import re
 BASE_DIR = Path(__file__).resolve().parent
 SF_SYMBOLS_PATH = BASE_DIR / 'SF_Symbols'
 ALL_SYMBOLS = {}
-RE_PATH = re.compile(r'd="(.*?)"')
+RE_PATH = re.compile(r' d="(.*?)"')
 files = sorted(listdir(SF_SYMBOLS_PATH))
 files_length = len(files)
 
