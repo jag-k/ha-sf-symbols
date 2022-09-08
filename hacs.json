@@ -1,0 +1,7 @@
+{
+  "name": "SF Symbols",
+  "filename": "sf-symbols.js",
+  "render_readme": true,
+  "country": ["RU"],
+  "homeassistant": "0.110.0"
+}
